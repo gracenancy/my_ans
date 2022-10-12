@@ -1,0 +1,29 @@
+---
+- name: install packages on machine
+  hosts: raiders
+  gather_facts: yes
+
+  vars_files:
+   - vars/aptpkgs.yml
+  
+  tasks:
+   - name: "update apt"
+     raw: "apt update -y"
+     become: yes
+ 
+   - name: "Bootstrap apt install"
+     raw: "apt install -y {{ item }}"
+     loop: "{{ bootstrap_packages }}"
+     become: yes
+   - name: "Apt packages install"
+     apt: 
+     name: "{{ item }}"
+     loop: "{{ apt_packages }}"
+     become: yes
+   - name: "print the apt_pkgs"
+     debug:
+       msg:
+         apt_pkgs: "installed {{ item }}"
+     loop: "{{ bootstrap_packages }}"
+     
+  

@@ -1,0 +1,12 @@
+---
+bootstrap_packages:
+ - python3
+ - aptitude
+
+apt_packages:
+ - cowsay
+ - sl
+ - cmatrix
+ - iputils-ping
+
+
