@@ -1,0 +1,17 @@
+Good news, {{ ansible_user }}! We have another mission to complete!
+
+{% if planet|lower == "luna park" %}
+Delivery to Luna Park
+Contents: Prizes for the claw crane
+Delivery at: Luna Park, Moon
+
+{% elif planet|lower == "cineplex 14" %}
+Delivery to Cineplex 14
+Contents: Popcorn
+Delivery at: {{ planet }}
+
+{% else %}
+Delivery to Earth
+Contents: RandR / Time Off
+Delivery at : {{ planet }}
+{% endif %}

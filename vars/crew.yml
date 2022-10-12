@@ -1,0 +1,11 @@
+---
+crew:
+      Zapp Brannigan:
+        description: ship captain, lots of medals
+        skills: leader, tactics, karaoke
+      Kif:
+        description: lieutenant
+        skills: devoted, quiet
+      Amy:
+        description: PhD
+        skills: engineering, physics, communication
