@@ -7,15 +7,19 @@
   # these variables are used in the template ship.cfg.j2
   vars:
     mission:
-     - primary
-     - secondary
+     - "primary"
+     - "secondary"
     planet:
-     - luna park
-     - cineplex 14
+     - "luna park"
+     - "cineplex 14"
     
 
   tasks:
     - name: Running a looping jinja template
       template:  
-        src: templates/mission-orders.j2    # name of the template on ansible controller
-        dest: ~/{{ mission }}-mission-orders.txt  
+        src: templates/mission-orders.txt.j2    # name of the template on ansible controller
+        dest: "~/{{ item.mission }}-mission-orders.txt"
+      loop:
+        - {"mission": "{{mission[0]}}", "planet": "{{planet[0]}}"}
+        - {"mission": "{{mission[1]}}", "planet": "{{planet[1]}}"}
+
