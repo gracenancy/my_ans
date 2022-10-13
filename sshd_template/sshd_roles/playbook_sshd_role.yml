@@ -1,0 +1,6 @@
+---
+- name: sshd config copy to target using role
+  hosts: fry
+  roles:
+   - sshd_roles
+
