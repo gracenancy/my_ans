@@ -9,8 +9,10 @@ HostKey /etc/ssh/ssh_host_ecdsa_key
 HostKey /etc/ssh/ssh_host_ed25519_key
 
 # Ciphers and keying
-Ciphers aes128-ctr,aes192-ctr,aes256-ctr,arcfour256,arcfour128
-MACs hmac-sha1,umac-64@openssh.com,hmac-ripemd160
+#Ciphers aes128-ctr,aes192-ctr,aes256-ctr
+#MACs hmac-sha1,umac-64@openssh.com,hmac-ripemd160
+Ciphers aes128-ctr,aes192-ctr,aes256-ctr
+MACs hmac-sha2-256,hmac-sha2-512,hmac-sha1
 
 # Logging
 # SyslogFacility AUTH
@@ -23,7 +25,7 @@ StrictModes yes
 MaxAuthTries 6
 MaxSessions 10
 PubkeyAuthentication   yes
-AuthorizedKeysFilie    .ssh/authorized_keys
+AuthorizedKeysFile    /home/fry/.ssh/authorized_keys
 PasswordAuthentication no
 ChallengeResponseAuthentication no
 UsePAM no
