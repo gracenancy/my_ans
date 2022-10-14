@@ -11,7 +11,7 @@ HostKey /etc/ssh/ssh_host_ed25519_key
 # Ciphers and keying
 #Ciphers aes128-ctr,aes192-ctr,aes256-ctr
 #MACs hmac-sha1,umac-64@openssh.com,hmac-ripemd160
-Ciphers aes128-ctr,aes192-ctr,aes256-ctr
+Ciphers aes128-ctr,aes192-ctr,aes256-ctr 
 MACs hmac-sha2-256,hmac-sha2-512,hmac-sha1
 
 # Logging
@@ -33,5 +33,5 @@ X11Forwarding yes
 PrintMotd no
 AcceptEnv LANG LC_*
 Subsystem sftp /usr/lib/openssh/sftp-server
-AllowAgentForwarding yes
+AllowAgentForwarding yes    
 
